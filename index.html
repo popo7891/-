@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AC播放器</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">云音乐播放器</div>
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="搜索歌曲、歌手">
+                <button id="search-btn">搜索</button>
+            </div>
+        </div>
+        <div class="nav-menu">
+            <div class="nav-item active" data-type="recommend">推荐</div>
+            <div class="nav-item" data-type="rank">榜单</div>
+            <div class="nav-item" data-type="playlist">歌单</div>
+        </div>
+        <div class="main-box">
+            <div class="sidebar" id="songListBox">
+                <div class="loading">加载中...</div>
+            </div>
+            <div class="content">
+                <div class="lyric-box" id="lyricBox"></div>
+                <div class="play-list-wrap">
+                    <div class="clear-list" id="clearPlayList">清空列表</div>
+                    <h3>播放列表</h3>
+                    <div id="playListBox"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="player-fixed">
+        <div class="play-info">
+            <img class="play-cover" id="playCover" src="">
+            <div>
+                <div id="playName">未播放</div>
+                <div id="playAuthor"></div>
+                <div>
+                    <span class="quality-select active" data-q="128">标准</span>
+                    <span class="quality-select" data-q="320">高清</span>
+                    <span class="quality-select" data-q="999">无损</span>
+                    <span class="down-btn" id="downBtn">下载</span>
+                </div>
+            </div>
+        </div>
+        <div class="ctrl-btn" id="prev">上一曲</div>
+        <div class="ctrl-btn" id="play">播放</div>
+        <div class="ctrl-btn" id="next">下一曲</div>
+        <div class="progress">
+            <div class="progress-bar" id="proBar"></div>
+        </div>
+        <input type="range" class="volume" id="vol" min="0" max="100" value="80">
+        <audio id="audio">
+    </div>
+<script src="script.js"></script>
+</body>
+</html>
